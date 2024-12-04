@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted Birthday Message</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #result { color: red; font-size: 24px; margin-top: 20px; }
+        #hearts { font-size: 22px; }
+    </style>
+</head>
+<body>
+    <h1>Decrypt the Birthday Message!</h1>
+    <p><strong>Encrypted Message:</strong> 8 1 16 16 25 2 9 18 20 8 4 1 25</p>
+    <p>Use the provided key to decrypt the message and type it below:</p>
+    <p><strong>Key:</strong> A = 1, B = 2, C = 3, ..., Z = 26</p>
+
+    <input type="text" id="userInput" placeholder="Type decrypted message here...">
+    <button onclick="checkMessage()">Submit</button>
+
+    <div id="result"></div>
+    <div id="hearts"></div>
+
+    <script>
+        function checkMessage() {
+            var input = document.getElementById("userInput").value;
+            var normalizedInput = input.toLowerCase().replace(/\s+/g, '');
+
+            if (normalizedInput === "happybirthday") {
+                document.getElementById("result").innerHTML = "Happy Birthday! Wishing you a year filled with love and joy!";
+                document.getElementById("hearts").innerHTML = "💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖";
+            } else {
+                document.getElementById("result").innerHTML = "Hmm, that doesn't seem right. Try again!";
+                document.getElementById("hearts").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
